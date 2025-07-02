@@ -1,0 +1,1574 @@
+/* 应用主体样式 */
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+.app-header {
+  text-align: center;
+  padding: 2rem 0;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid #4a90e2;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.app-main {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* 钱包头部样式 */
+.wallet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wallet-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.wallet-address, .player-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.address-label, .name-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.address-value, .name-value {
+  color: white;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.wallet-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.disconnect-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.disconnect-btn:hover {
+  background: linear-gradient(135deg, #ff5252, #e53935);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.disconnect-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 冒险系统样式 */
+.adventure-tab {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.adventure-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.adventure-header h3 {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.refresh-btn {
+  background: linear-gradient(135deg, #2196F3, #1976D2);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.refresh-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1976D2, #1565C0);
+  transform: translateY(-1px);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.adventure-init {
+  text-align: center;
+  padding: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.adventure-init p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.init-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.init-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.init-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.adventure-areas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.adventure-area {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.adventure-area:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.area-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.area-name {
+  color: white;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.area-level {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.area-info {
+  margin-bottom: 1.5rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.info-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.info-value {
+  color: white;
+  font-weight: 600;
+}
+
+.risk-level {
+  font-weight: 700;
+}
+
+.adventure-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 0.5rem;
+}
+
+.adventure-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #45a049, #3d8b40);
+  transform: translateY(-1px);
+}
+
+.adventure-btn:disabled {
+  background: linear-gradient(135deg, #666, #555);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.requirement-warning {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* 怪物战斗样式 */
+.battle-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.monsters-section h4,
+.battle-logs-section h4 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.monster-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.monster-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.monster-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.monster-info {
+  flex: 1;
+}
+
+.monster-name {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.monster-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.monster-level {
+  color: #FFD700;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: rgba(255, 215, 0, 0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.health-bar {
+  flex: 1;
+  min-width: 120px;
+}
+
+.health-text {
+  color: white;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  text-align: center;
+}
+
+.health-bar-bg {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.health-bar-fill {
+  height: 100%;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.attack-btn {
+  background: linear-gradient(135deg, #F44336, #D32F2F);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.attack-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #D32F2F, #C62828);
+  transform: translateY(-1px);
+}
+
+.attack-btn:disabled {
+  background: linear-gradient(135deg, #666, #555);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.battle-logs-section {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.battle-logs {
+  max-height: 300px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.log-entry {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .battle-container {
+    grid-template-columns: 1fr;
+  }
+
+  .monster-item {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .monster-stats {
+    justify-content: center;
+  }
+}
+
+/* 聊天系统样式 */
+.chat-tab {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chat-header h3 {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.chat-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.status-indicator {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.connected {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.disconnected {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.participants-count {
+  color: #2196F3;
+  font-size: 0.8rem;
+  background: rgba(33, 150, 243, 0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.message {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.message-content {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.message-content b {
+  color: #FFD700;
+  font-weight: 600;
+}
+
+.message-content i {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+}
+
+.message-time {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+}
+
+.chat-input-container {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.chat-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem;
+  color: white;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: #2196F3;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.3);
+}
+
+.chat-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.send-button {
+  background: linear-gradient(135deg, #2196F3, #1976D2);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.send-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1976D2, #1565C0);
+  transform: translateY(-1px);
+}
+
+.send-button:disabled {
+  background: linear-gradient(135deg, #666, #555);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.chat-tips {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.chat-tips small {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+}
+
+/* 聊天消息滚动条样式 */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* 响应式聊天设计 */
+@media (max-width: 768px) {
+  .chat-tab {
+    height: 500px;
+    padding: 1rem;
+  }
+
+  .chat-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .chat-status {
+    align-items: flex-start;
+  }
+
+  .chat-input-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .chat-input {
+    width: 100%;
+  }
+
+  .send-button {
+    width: 100%;
+  }
+}
+
+/* 钱包连接样式 */
+.wallet-connect {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.wallet-connect h2 {
+  margin-bottom: 2rem;
+  color: #ffd700;
+}
+
+.connect-btn {
+  background: linear-gradient(45deg, #4a90e2, #357abd);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.connect-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+}
+
+/* 钱包信息样式 */
+.wallet-info {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.wallet-address, .network-info {
+  margin-bottom: 0.5rem;
+}
+
+.network-warning {
+  background: rgba(255, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.switch-network-btn, .disconnect-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+/* 游戏布局 */
+.game-layout {
+  display: flex;
+  gap: 2rem;
+  min-height: 70vh;
+}
+
+.left-panel {
+  flex: 0 0 30%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.right-panel {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+/* 注册表单样式 */
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.registration-form {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 3rem;
+  border-radius: 12px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.registration-form h2 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #4a90e2;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+.register-btn {
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  color: #333;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.register-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+.register-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status-message {
+  margin-top: 1rem;
+  color: #4a90e2;
+  font-style: italic;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+/* 玩家属性样式 */
+.player-attributes {
+  color: #ffffff;
+}
+
+.player-attributes h2 {
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid #4a90e2;
+  padding-bottom: 0.5rem;
+}
+
+.attribute-section {
+  margin-bottom: 2rem;
+}
+
+.attribute-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.attribute-label {
+  color: #4a90e2;
+  font-weight: bold;
+}
+
+.attribute-value {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.save-progress-btn {
+  width: 100%;
+  background: linear-gradient(45deg, #4a90e2, #357abd);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-progress-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+}
+
+.save-progress-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 游戏选项卡样式 */
+.game-tabs {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-navigation {
+  display: flex;
+  border-bottom: 2px solid #4a90e2;
+  margin-bottom: 1.5rem;
+}
+
+.tab-button {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.tab-button.active {
+  background: rgba(74, 144, 226, 0.3);
+  border-bottom-color: #ffd700;
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.tab-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* 修炼选项卡样式 */
+.cultivation-tab h3 {
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+}
+
+.cultivation-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.xiuwei-display {
+  text-align: center;
+  background: rgba(255, 215, 0, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 2px solid #ffd700;
+}
+
+.xiuwei-display h4 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.xiuwei-value {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+
+.xiuwei-info {
+  color: #4a90e2;
+  font-style: italic;
+}
+
+.cultivation-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.breakthrough-btn, .heal-btn {
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  color: #333;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.breakthrough-btn:hover:not(:disabled), .heal-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+.breakthrough-btn:disabled, .heal-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.action-info {
+  color: #4a90e2;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.current-status {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.current-status h4 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 物品选项卡样式 */
+.items-tab h3 {
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+}
+
+.items-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.gold-display {
+  background: rgba(255, 215, 0, 0.1);
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid #ffd700;
+}
+
+.gold-display h4 {
+  color: #ffd700;
+  margin: 0;
+}
+
+.equipped-items, .backpack-items {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.equipped-items h4, .backpack-items h4 {
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.item-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.item-card.equipped {
+  border-color: #ffd700;
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.item-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.item-name {
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+
+.item-type {
+  color: #4a90e2;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.item-bonus {
+  color: #00ff00;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.item-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.equip-btn, .unequip-btn, .use-btn, .sell-btn {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.equip-btn {
+  background: #4a90e2;
+  color: white;
+}
+
+.unequip-btn {
+  background: #e74c3c;
+  color: white;
+}
+
+.use-btn {
+  background: #27ae60;
+  color: white;
+}
+
+.sell-btn {
+  background: #f39c12;
+  color: white;
+}
+
+.no-items {
+  text-align: center;
+  color: #888;
+  padding: 2rem;
+  font-style: italic;
+}
+
+/* 冒险选项卡样式 */
+.adventure-tab h3 {
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+}
+
+.adventure-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.monsters-list h4 {
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+
+.monsters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.monster-card {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid #e74c3c;
+  border-radius: 6px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.monster-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.monster-name {
+  font-weight: bold;
+  color: #e74c3c;
+  margin-bottom: 0.5rem;
+}
+
+.monster-health {
+  color: #ff6b6b;
+  margin-bottom: 0.3rem;
+}
+
+.monster-stats {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.attack-btn {
+  width: 100%;
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.attack-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+.attack-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.battle-log {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: fit-content;
+}
+
+.battle-log h4 {
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+
+.log-content {
+  max-height: 400px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.log-entry {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.no-log {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+
+.clear-log-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 征战选项卡样式 */
+.battle-tab h3 {
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+}
+
+.battle-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.player-stats {
+  background: rgba(255, 215, 0, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ffd700;
+}
+
+.player-stats h4 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.leaderboard {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.leaderboard h4 {
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.leaderboard-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.rank {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin-right: 1rem;
+  min-width: 50px;
+}
+
+.player-info {
+  flex: 1;
+}
+
+.player-name {
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 0.3rem;
+}
+
+.player-details {
+  color: #4a90e2;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.player-address {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.challenge-action {
+  margin-left: 1rem;
+}
+
+.challenge-btn {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.challenge-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+.challenge-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.self-indicator {
+  color: #27ae60;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.no-players {
+  text-align: center;
+  color: #888;
+  padding: 2rem;
+  font-style: italic;
+}
+
+.battle-info {
+  background: rgba(74, 144, 226, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #4a90e2;
+}
+
+.battle-info h4 {
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+
+.battle-info ul {
+  color: #ffffff;
+  padding-left: 1.5rem;
+}
+
+.battle-info li {
+  margin-bottom: 0.5rem;
+}
+
+/* 聊天选项卡样式 */
+.chat-tab h3 {
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+}
+
+.chat-section {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+}
+
+.chat-messages {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.chat-message {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.message-user {
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+.message-time {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.message-content {
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.chat-input {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.input-container {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.message-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #4a90e2;
+  border-radius: 4px;
+  padding: 0.8rem;
+  color: #ffffff;
+  resize: vertical;
+  min-height: 60px;
+}
+
+.message-input:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+.send-btn {
+  background: linear-gradient(45deg, #4a90e2, #357abd);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.send-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+}
+
+.send-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.chat-info {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(74, 144, 226, 0.1);
+  border-radius: 6px;
+  border: 1px solid #4a90e2;
+}
+
+.chat-info p {
+  color: #4a90e2;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* 错误消息样式 */
+.error-message {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px solid #e74c3c;
+  border-radius: 8px;
+  margin: 2rem;
+}
+
+.error-message h2 {
+  color: #e74c3c;
+  margin-bottom: 1rem;
+}
+
+.error-message p {
+  color: #ffffff;
+  margin: 0.5rem 0;
+}
+
+/* 占位符样式 */
+.tab-placeholder {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+}
+
+.tab-placeholder h3 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.tab-placeholder p {
+  color: #888;
+  font-style: italic;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .game-layout {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    flex: none;
+  }
+
+  .adventure-section {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .items-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .monsters-grid {
+    grid-template-columns: 1fr;
+  }
+}

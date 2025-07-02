@@ -1,0 +1,1579 @@
+/* MUD 风格样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
+  background: linear-gradient(135deg, #001122 0%, #000011 50%, #110022 100%);
+  color: #00ff00;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+#root {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 应用主体 */
+.app {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(45deg, #001133 0%, #000022 25%, #110033 50%, #000011 75%, #220044 100%);
+  color: #00ff00;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  text-align: center;
+  padding: 1.2rem 0;
+  background: linear-gradient(90deg, #002200 0%, #004400 50%, #002200 100%);
+  border-bottom: 3px solid #00ff00;
+  box-shadow: 0 3px 10px rgba(0, 255, 0, 0.3);
+  flex-shrink: 0;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: #00ffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 0 0 15px #00ffff, 0 0 30px #0088ff;
+  line-height: 1.2;
+}
+
+.app-main {
+  flex: 1;
+  padding: 0.2rem;
+  background: transparent;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* 钱包头部 */
+.wallet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #003300 0%, #001122 50%, #003300 100%);
+  border: 2px solid #00ff88;
+  padding: 0.4rem 0.6rem;
+  margin-bottom: 0.2rem;
+  box-shadow: 0 3px 8px rgba(0, 255, 136, 0.2);
+  flex-shrink: 0;
+  border-radius: 6px;
+}
+
+.wallet-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.wallet-address, .player-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.address-label, .name-label {
+  color: #00ff00;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.address-value, .name-value {
+  color: #ffffff;
+  background: #002200;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #00ff00;
+  border-radius: 2px;
+}
+
+.disconnect-btn {
+  background: #110000;
+  color: #ff4444;
+  border: 1px solid #ff4444;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.disconnect-btn:hover {
+  background: #ff4444;
+  color: #000000;
+  box-shadow: 0 0 8px rgba(255, 68, 68, 0.5);
+}
+
+/* 游戏布局 */
+.game-interface {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.game-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  gap: 0.2rem;
+  min-height: 0;
+  height: 100%;
+}
+
+/* 面板样式 */
+.left-panel {
+  background: linear-gradient(135deg, #002211 0%, #001122 50%, #112200 100%);
+  border: 3px solid #00ff88;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3), inset 0 0 10px rgba(0, 255, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.center-panel {
+  background: linear-gradient(180deg, #000033 0%, #001122 50%, #000044 100%);
+  border: 3px solid #0088ff;
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(0, 136, 255, 0.4), inset 0 0 15px rgba(0, 0, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.right-panel {
+  background: linear-gradient(225deg, #220011 0%, #110022 50%, #330011 100%);
+  border: 3px solid #ff8800;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 136, 0, 0.3), inset 0 0 10px rgba(255, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+/* 玩家属性面板 */
+.player-panel {
+  background: #001100;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.player-attributes h3 {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+.player-attributes .attribute-value {
+  color: #ffff00;
+  font-weight: bold;
+  text-shadow: 0 0 3px #ffff00;
+}
+
+.player-attributes .attribute-label {
+  color: #88ff88;
+}
+
+.player-panel h2 {
+  color: #00ffff;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  border-bottom: 3px solid #00ffff;
+  padding-bottom: 0.4rem;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff;
+  font-weight: bold;
+}
+
+.player-info {
+  flex: 1;
+  margin-bottom: 0.8rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  padding: 0.25rem 0.4rem;
+  background: #002200;
+  border-left: 3px solid #00ff00;
+  border-radius: 2px;
+}
+
+.info-label {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.info-value {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* 血量为0时的危险警示样式 */
+.health-critical {
+  color: #ff0000 !important;
+  background: rgba(255, 0, 0, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #ff0000;
+  animation: healthCriticalPulse 1.5s infinite;
+  text-shadow: 0 0 10px #ff0000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.critical-warning {
+  color: #ffff00;
+  font-weight: bold;
+  animation: warningBlink 1s infinite;
+  text-shadow: 0 0 5px #ffff00;
+}
+
+@keyframes healthCriticalPulse {
+  0%, 100% {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: #ff0000;
+  }
+  50% {
+    background: rgba(255, 0, 0, 0.3);
+    border-color: #ff4444;
+  }
+}
+
+@keyframes warningBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* 血量为0时的按钮样式 */
+.health-critical-btn {
+  background: linear-gradient(90deg, #660000, #990000) !important;
+  border-color: #ff0000 !important;
+  color: #ffff00 !important;
+  cursor: not-allowed !important;
+  animation: healthCriticalPulse 1.5s infinite;
+  text-shadow: 0 0 5px #ffff00;
+}
+
+.health-critical-btn:hover {
+  background: linear-gradient(90deg, #660000, #990000) !important;
+  transform: none !important;
+}
+
+/* 按钮样式 */
+.btn, .save-btn, .register-btn {
+  background: linear-gradient(135deg, #003300 0%, #002200 100%);
+  color: #00ff88;
+  border: 2px solid #00ff88;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 0.2rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  text-shadow: 0 0 4px #00ff88;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.2);
+}
+
+.btn:hover, .save-btn:hover, .register-btn:hover {
+  background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
+  color: #000000;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.6), 0 0 30px rgba(0, 204, 102, 0.3);
+  transform: translateY(-2px);
+  text-shadow: 0 0 2px #000000;
+}
+
+.btn:disabled, .save-btn:disabled, .register-btn:disabled {
+  background: #111111;
+  color: #666666;
+  border-color: #666666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* 玩家注册界面样式 */
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #001100;
+  border: 2px solid #00ff00;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.registration-form h2 {
+  color: #00ff00;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00ff00;
+  font-size: 1.5rem;
+}
+
+.registration-form p {
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.input-group {
+  margin-bottom: 2rem;
+  text-align: left;
+  width: 100%;
+}
+
+.input-group label {
+  display: block;
+  color: #00ff00;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: #000000;
+  border: 1px solid #00ff00;
+  border-radius: 4px;
+  color: #00ff00;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #00ff00;
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+}
+
+.input-group input::placeholder {
+  color: #666666;
+  opacity: 0.8;
+}
+
+.register-btn {
+  background: linear-gradient(135deg, #003300 0%, #002200 100%);
+  color: #00ff88;
+  border: 2px solid #00ff88;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 0.2rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.2);
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.register-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
+  color: #000000;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.6), 0 0 30px rgba(0, 204, 102, 0.3);
+  transform: translateY(-2px);
+  text-shadow: 0 0 2px #000000;
+}
+
+.register-btn:disabled {
+  background: #111111;
+  color: #666666;
+  border-color: #666666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.status-message {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background: #001100;
+  border: 1px solid #00ff00;
+  border-radius: 4px;
+  color: #00ff00;
+  font-size: 0.9rem;
+}
+
+/* 输入框样式 */
+.input, .dao-hao-input {
+  background: #002200;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  padding: 0.6rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  width: 100%;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.input:focus, .dao-hao-input:focus {
+  outline: none;
+  border-color: #ffffff;
+  background: #003300;
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
+}
+
+/* 游戏选项卡面板 */
+.game-tabs-panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 选项卡样式 */
+.tabs {
+  display: flex;
+  background: linear-gradient(90deg, #002244 0%, #001133 50%, #002244 100%);
+  border-bottom: 3px solid #0088ff;
+  margin: 0;
+  padding: 0.3rem 0.3rem 0 0.3rem;
+}
+
+.tab {
+  background: linear-gradient(135deg, #003366 0%, #002244 100%);
+  color: #00ddff;
+  border: 2px solid #0088ff;
+  border-bottom: none;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  margin-right: 0.2rem;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  text-shadow: 0 0 5px #00ddff;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #0066aa 0%, #004488 100%);
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(0, 136, 255, 0.4);
+  text-shadow: 0 0 8px #ffffff;
+}
+
+.tab:hover:not(.active) {
+  background: linear-gradient(135deg, #004477 0%, #003355 100%);
+  box-shadow: 0 0 10px rgba(0, 221, 255, 0.4);
+  color: #ffffff;
+  text-shadow: 0 0 6px #00ddff;
+}
+
+/* 选项卡内容 */
+.tab-content {
+  flex: 1;
+  background: linear-gradient(180deg, #000022 0%, #000033 50%, #000011 100%);
+  border: none;
+  padding: 0.5rem;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* 物品列表 */
+.items-section {
+  margin-bottom: 1.5rem;
+}
+
+.items-section h4 {
+  color: #00ff00;
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid #00ff00;
+  padding-bottom: 0.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+/* 已装备物品区域 */
+.equipped-items {
+  margin-bottom: 2rem;
+}
+
+/* 背包物品区域 - 添加上方横线 */
+.backpack-items h4 {
+  border-top: 2px solid #00ff00;
+  padding-top: 0.8rem;
+  margin-top: 1rem;
+}
+
+/* 物品网格布局 */
+.items-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* 已装备物品 - 横向显示 */
+.equipped-items .items-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+/* 背包物品 - 保持原有的网格布局 */
+.backpack-items .items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* 物品卡片 */
+.item-card {
+  background: #001100;
+  border: 1px solid #00ff00;
+  border-radius: 3px;
+  padding: 0.8rem;
+  transition: all 0.2s ease;
+  min-width: 200px;
+}
+
+.item-card:hover {
+  background: #002200;
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.2);
+}
+
+/* 已装备物品卡片 - 特殊样式 */
+.item-card.equipped {
+  border-color: #ffff00;
+  background: #221100;
+  box-shadow: 0 0 5px rgba(255, 255, 0, 0.3);
+}
+
+.item-card.equipped:hover {
+  background: #332200;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.4);
+}
+
+/* 物品卡片内部元素 */
+.item-card .item-name {
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+.item-card .item-type {
+  color: #00ff00;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+.item-card .item-bonus {
+  color: #ffff00;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+/* 无物品提示 */
+.no-items {
+  color: #666666;
+  font-style: italic;
+  text-align: center;
+  padding: 2rem;
+  border: 1px dashed #333333;
+  border-radius: 3px;
+  background: #000000;
+}
+
+/* 金币显示 */
+.gold-display {
+  margin-bottom: 1.5rem;
+  padding: 0.8rem;
+  background: #001100;
+  border: 1px solid #00ff00;
+  border-radius: 3px;
+}
+
+.gold-display h4 {
+  color: #ffff00;
+  margin: 0;
+  text-shadow: 0 0 5px #ffff00;
+}
+
+.item-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.equip-btn, .unequip-btn, .use-btn, .sell-btn {
+  background: #002200;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.equip-btn:hover, .unequip-btn:hover, .use-btn:hover {
+  background: #00ff00;
+  color: #000000;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.sell-btn {
+  color: #ffff00;
+  border-color: #ffff00;
+  background: #221100;
+}
+
+.sell-btn:hover {
+  background: #ffff00;
+  color: #000000;
+  box-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+}
+
+/* 冒险/战斗系统 */
+.adventure-tab, .battle-container {
+  background: #000000;
+  color: #00ff00;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.adventure-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #00ff00;
+  flex-shrink: 0;
+}
+
+.adventure-header h3 {
+  color: #00ff00;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0 0 8px #00ff00;
+}
+
+.refresh-btn, .init-btn, .adventure-btn, .attack-btn {
+  background: #002200;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.refresh-btn:hover, .init-btn:hover, .adventure-btn:hover {
+  background: #00ff00;
+  color: #000000;
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+}
+
+.attack-btn {
+  color: #ff4444;
+  border-color: #ff4444;
+  background: #220000;
+}
+
+.attack-btn:hover {
+  background: #ff4444;
+  color: #000000;
+  box-shadow: 0 0 8px rgba(255, 68, 68, 0.5);
+}
+
+.monster-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.monster-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #001100;
+  border: 1px solid #00ff00;
+  padding: 0.8rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.monster-item:hover {
+  background: #002200;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+.monster-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.monster-name {
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.monster-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.4rem;
+}
+
+.monster-level {
+  color: #ffff00;
+  font-size: 0.85rem;
+  font-weight: bold;
+  background: #221100;
+  padding: 0.2rem 0.4rem;
+  border-radius: 2px;
+  border: 1px solid #ffff00;
+}
+
+.health-bar {
+  flex: 1;
+  min-width: 120px;
+  max-width: 200px;
+}
+
+.health-text {
+  color: #00ff00;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.health-bar-bg {
+  background: #333333;
+  height: 8px;
+  border: 1px solid #00ff00;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.health-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00);
+  transition: width 0.3s ease;
+  border-radius: 1px;
+}
+
+/* 战斗日志 - 右侧面板 */
+.battle-logs-panel {
+  background: #001100;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.battle-logs-panel h3 {
+  color: #00ff00;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #00ff00;
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px #00ff00;
+  font-size: 1.2rem;
+}
+
+.battle-logs-container {
+  flex: 1;
+  overflow-y: auto;
+  background: #002200;
+  border: 1px solid #00ff00;
+  padding: 0.8rem;
+  border-radius: 3px;
+  min-height: 0;
+}
+
+.log-entry {
+  color: #ffffff;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid #003300;
+  background: #001100;
+  border-radius: 2px;
+  border-left: 3px solid #00ff00;
+  line-height: 1.3;
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+}
+
+.log-entry.victory {
+  border-left-color: #00ff00;
+  background: #001100;
+}
+
+.log-entry.defeat {
+  border-left-color: #ff4444;
+  background: #110000;
+}
+
+.log-entry.system {
+  border-left-color: #ffff00;
+  background: #111100;
+  font-style: italic;
+}
+
+.log-entry .log-time {
+  color: #888888;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.log-entry .log-text {
+  color: #ffffff;
+}
+
+/* 战斗日志 - 嵌入式（冒险选项卡内） */
+.battle-logs-section {
+  background: #001100;
+  border: 2px solid #00ff00;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.battle-logs-section h4 {
+  color: #00ff00;
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid #00ff00;
+  padding-bottom: 0.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+.battle-logs {
+  flex: 1;
+  overflow-y: auto;
+  background: #002200;
+  border: 1px solid #00ff00;
+  padding: 0.8rem;
+  border-radius: 3px;
+  min-height: 0;
+}
+
+/* 聊天系统 */
+.chat-tab {
+  background: #000000;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem 1rem 0.6rem 1rem;
+  border-bottom: 2px solid #00ff00;
+  background: #001100;
+  flex-shrink: 0;
+}
+
+.chat-header h3 {
+  color: #00ff00;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0 0 8px #00ff00;
+}
+
+.chat-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.status-indicator {
+  color: #00ff00;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.connected {
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+.disconnected {
+  color: #ff4444;
+  text-shadow: 0 0 5px #ff4444;
+}
+
+.participants-count {
+  color: #ffff00;
+  font-size: 0.8rem;
+  background: #221100;
+  padding: 0.2rem 0.4rem;
+  border-radius: 2px;
+  border: 1px solid #ffff00;
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  background: #002200;
+  border: 2px solid #00ff00;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  min-height: 0;
+}
+
+.message {
+  margin-bottom: 0.6rem;
+  padding: 0.5rem;
+  border-left: 3px solid #00ff00;
+  background: #001100;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.message:hover {
+  background: #002200;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.2);
+}
+
+.message-content {
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+.message-content b {
+  color: #ffff00;
+  font-weight: bold;
+}
+
+.message-content i {
+  color: #888888;
+  font-style: italic;
+}
+
+.message-time {
+  color: #666666;
+  font-size: 0.7rem;
+}
+
+.chat-input-container {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.chat-input {
+  flex: 1;
+  background: #002200;
+  border: 2px solid #00ff00;
+  padding: 0.6rem;
+  color: #00ff00;
+  font-family: inherit;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: #ffffff;
+  background: #003300;
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
+}
+
+.send-button {
+  background: #002200;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.send-button:hover:not(:disabled) {
+  background: #00ff00;
+  color: #000000;
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+}
+
+.send-button:disabled {
+  background: #111111;
+  color: #666666;
+  border-color: #666666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.chat-tips {
+  margin-top: 0.6rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.chat-tips small {
+  color: #666666;
+  font-size: 0.7rem;
+}
+
+/* 滚动条样式 */
+.chat-messages::-webkit-scrollbar,
+.battle-logs::-webkit-scrollbar,
+.monster-list::-webkit-scrollbar,
+.tab-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track,
+.battle-logs::-webkit-scrollbar-track,
+.monster-list::-webkit-scrollbar-track,
+.tab-content::-webkit-scrollbar-track {
+  background: #001100;
+  border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb,
+.battle-logs::-webkit-scrollbar-thumb,
+.monster-list::-webkit-scrollbar-thumb,
+.tab-content::-webkit-scrollbar-thumb {
+  background: #00ff00;
+  border-radius: 4px;
+  border: 1px solid #002200;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover,
+.battle-logs::-webkit-scrollbar-thumb:hover,
+.monster-list::-webkit-scrollbar-thumb:hover,
+.tab-content::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* 钱包连接页面 */
+.wallet-connect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #001100;
+  border: 2px solid #00ff00;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.wallet-connect h2 {
+  color: #00ff00;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.wallet-connect p {
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+/* 修炼选项卡样式 */
+.cultivation-tab {
+  padding: 1rem;
+}
+
+.cultivation-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.xiuwei-display {
+  text-align: center;
+  background: #001122;
+  border: 2px solid #0088ff;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.xiuwei-display h4 {
+  color: #0088ff;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.xiuwei-value {
+  font-size: 2.5rem;
+  color: #00ffff;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00ffff;
+  margin-bottom: 0.5rem;
+}
+
+.xiuwei-info {
+  color: #88ccff;
+  font-size: 0.9rem;
+}
+
+.cultivation-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* 增加按钮组之间的间距 */
+}
+
+/* 突破境界按钮组 */
+.breakthrough-btn {
+  background: linear-gradient(135deg, #330000 0%, #220000 100%);
+  color: #ff6666;
+  border: 2px solid #ff6666;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 102, 102, 0.3);
+  width: 100%;
+}
+
+.breakthrough-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ff6666 0%, #cc4444 100%);
+  color: #000000;
+  box-shadow: 0 0 20px rgba(255, 102, 102, 0.8), 0 0 40px rgba(204, 68, 68, 0.4);
+  transform: translateY(-3px);
+  text-shadow: 0 0 3px #000000;
+}
+
+.breakthrough-btn:disabled {
+  background: #111111;
+  color: #666666;
+  border-color: #666666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* 运功疗伤按钮组 */
+.heal-btn {
+  background: linear-gradient(135deg, #003300 0%, #002200 100%);
+  color: #66ff66;
+  border: 2px solid #66ff66;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(102, 255, 102, 0.3);
+  width: 100%;
+}
+
+.heal-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #66ff66 0%, #44cc44 100%);
+  color: #000000;
+  box-shadow: 0 0 20px rgba(102, 255, 102, 0.8), 0 0 40px rgba(68, 204, 68, 0.4);
+  transform: translateY(-3px);
+  text-shadow: 0 0 3px #000000;
+}
+
+.heal-btn:disabled {
+  background: #111111;
+  color: #666666;
+  border-color: #666666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.action-info {
+  color: #888888;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.current-status {
+  background: #001100;
+  border: 2px solid #00ff00;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.current-status h4 {
+  color: #00ff00;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+}
+
+.status-item span:first-child {
+  color: #88ff88;
+  font-weight: bold;
+}
+
+.status-item span:last-child {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* PC专用布局 - 无响应式 */
+
+/* 征战选项卡样式 */
+.battle-tab {
+  color: #00ff00;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.battle-tab h3 {
+  color: #ffaa00;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #ffaa00;
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #ffaa00;
+  font-size: 1.3rem;
+}
+
+.battle-section {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.player-stats {
+  background: linear-gradient(135deg, #002200 0%, #001100 100%);
+  border: 2px solid #00ff88;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+.player-stats h4 {
+  color: #00ff88;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  text-shadow: 0 0 5px #00ff88;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0.8rem;
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid #00ff00;
+  border-radius: 4px;
+}
+
+.stat-item span:first-child {
+  color: #88ff88;
+  font-weight: bold;
+}
+
+.stat-item span:last-child {
+  color: #ffffff;
+  text-shadow: 0 0 3px #ffffff;
+}
+
+.leaderboard {
+  background: linear-gradient(135deg, #220011 0%, #110022 100%);
+  border: 2px solid #ff8800;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 136, 0, 0.2);
+}
+
+.leaderboard h4 {
+  color: #ff8800;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-shadow: 0 0 5px #ff8800;
+}
+
+.leaderboard-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #330022 0%, #220033 100%);
+  border: 1px solid #ff6600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.leaderboard-item:hover {
+  background: linear-gradient(90deg, #440033 0%, #330044 100%);
+  box-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+  transform: translateX(2px);
+}
+
+.rank {
+  color: #ffaa00;
+  font-weight: bold;
+  font-size: 1.1rem;
+  min-width: 40px;
+  text-shadow: 0 0 5px #ffaa00;
+}
+
+.player-info {
+  flex: 1;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.player-name {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+  text-shadow: 0 0 3px #ffffff;
+}
+
+.player-details {
+  color: #cccccc;
+  font-size: 0.85rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.player-address {
+  color: #888888;
+  font-size: 0.75rem;
+  font-family: monospace;
+}
+
+.challenge-action {
+  margin-left: 1rem;
+  min-width: 80px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.challenge-btn {
+  background: linear-gradient(135deg, #ff4400 0%, #cc3300 100%);
+  color: #ffffff;
+  border: 2px solid #ff6600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 3px #ffffff;
+  box-shadow: 0 0 8px rgba(255, 68, 0, 0.3);
+}
+
+.challenge-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ff6600 0%, #ff4400 100%);
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+.challenge-btn:disabled {
+  background: #444444;
+  color: #888888;
+  border-color: #666666;
+  cursor: not-allowed;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.self-indicator {
+  color: #00ff88;
+  font-style: italic;
+  font-weight: bold;
+  text-shadow: 0 0 3px #00ff88;
+}
+
+.no-players {
+  text-align: center;
+  color: #888888;
+  font-style: italic;
+  padding: 2rem;
+}
+
+.status-message {
+  background: linear-gradient(90deg, #004400 0%, #002200 100%);
+  color: #00ff00;
+  padding: 0.8rem;
+  margin: 1rem 0;
+  border: 2px solid #00ff00;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0 0 5px #00ff00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+.battle-info {
+  background: linear-gradient(135deg, #001122 0%, #002244 100%);
+  border: 2px solid #0088ff;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 136, 255, 0.2);
+}
+
+.battle-info h4 {
+  color: #0088ff;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  text-shadow: 0 0 5px #0088ff;
+}
+
+.battle-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.battle-info li {
+  color: #cccccc;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(0, 136, 255, 0.2);
+}
+
+.battle-info li:before {
+  content: "▶ ";
+  color: #0088ff;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+
